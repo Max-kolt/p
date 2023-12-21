@@ -48,7 +48,7 @@ services:
 
   prometheus:
     build:
-      context: ../monitoring/prometheus
+      context: monitoring/prometheus
     ports:
       - "9090:9090"
     volumes:
