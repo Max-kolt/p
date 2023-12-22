@@ -14,7 +14,7 @@ async def get_user_by_username(current_user: user_dep, username: str):
     return ResponseSchema(detail='Successfully fetch data!', result={user_info})
 
 
-@user_router.get('/', response_model=ResponseSchema)
+@user_router.get('/get_all', response_model=ResponseSchema)
 async def get_top_10_users(current_user: user_dep):
     users = await UserRepository.get_all()
     return ResponseSchema(detail='Successfully fetch data!', result=users)

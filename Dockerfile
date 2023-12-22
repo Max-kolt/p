@@ -1,4 +1,4 @@
-FROM python:3.11
+FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
@@ -6,7 +6,6 @@ ENV PYTHONUNBUFFERED 1
 WORKDIR /app
 COPY requirements.txt .
 RUN pip install --no-cache --no-cache-dir -r requirements.txt
-# Separating dep install stage for build speed up sake
 
 COPY . .
 WORKDIR /app/app
